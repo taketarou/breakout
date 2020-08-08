@@ -6,10 +6,10 @@ using UnityEngine; //デバッグログやUnity専用の機能を使えるよう
 //public class クラス名:継承しているクラス名       UnityのスクリプトではMonoBehaviourを基本的に継承  MonoBehaviouを継承することで(MonoBehaviourクラスで定義されている変数、関数である)Start関数やUpdate関数、transform変数、gameObject変数などが使えるようになる。
 public class Controller : MonoBehaviour　
 {
-
     // 実行時に初めに1回呼ばれる関数
     void Start() 
     {
+
 
     }
 
