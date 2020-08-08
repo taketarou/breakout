@@ -20,6 +20,6 @@ public class KabeOut : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         //Masterオブジェクトの持つGameMasterコンポーネント(スクリプト)のGameOver関数を呼ぶ
-        GameObject.Find("Master").GetComponent<GameMaster>().GameOver("ゲーム失敗. また挑戦しよう");
+        GameObject.Find("Master").GetComponent<GameMaster>().GameOver("ゲーム失敗. また挑戦しよう",false);
     }
 }

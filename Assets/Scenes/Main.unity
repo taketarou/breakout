@@ -705,7 +705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c124fbb94f498f4aa3698ea0078a31e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxNum: 40
+  boxNum: 2
   nowTime: 0
 --- !u!1 &963194225
 GameObject:

@@ -24,13 +24,15 @@ public class GameMaster : MonoBehaviour
         //もし今のボックス数が0以下ならGameOver関数を呼び出し、Resultシーンに移動する。
         if (boxNum <= 0)
         {
-            GameOver(nowTime.ToString("F0")+"秒でクリアできた!"); //nowTime.ToString("F0")＝nowTimeを小数点第0位まで(＝小数点以下なし)の文字列に変換する
+            GameOver(nowTime.ToString("F0")+"秒でクリアできた!",true); //nowTime.ToString("F0")＝nowTimeを小数点第0位まで(＝小数点以下なし)の文字列に変換する
         }
     }
 
-    public void GameOver(string resultMessage)
+    public void GameOver(string resultMessage,bool isClear)
     {
         DataSender.resultMessage = resultMessage;
+        DataSender.isClear = isClear;
+
         //Resultという名前の”シーン”に移動しろ．という命令
         SceneManager.LoadScene("Result");
     }
