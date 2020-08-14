@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 35302472}
   - component: {fileID: 35302471}
   - component: {fileID: 35302470}
+  - component: {fileID: 35302474}
   m_Layer: 0
   m_Name: Kabe
   m_TagString: Untagged
@@ -214,6 +215,19 @@ Transform:
   m_Father: {fileID: 1652078342}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &35302474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35302469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f8de19d306926d4cb33393dc1137724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 8300000, guid: b2091562b07cb044b9143c3cb37f38c6, type: 3}
 --- !u!1 &209025542
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,7 +719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c124fbb94f498f4aa3698ea0078a31e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxNum: 2
+  boxNum: 40
   nowTime: 0
 --- !u!1 &963194225
 GameObject:
@@ -802,6 +816,7 @@ GameObject:
   - component: {fileID: 1137583206}
   - component: {fileID: 1137583205}
   - component: {fileID: 1137583204}
+  - component: {fileID: 1137583208}
   m_Layer: 0
   m_Name: 'Kabe '
   m_TagString: Untagged
@@ -883,6 +898,19 @@ Transform:
   m_Father: {fileID: 1652078342}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1137583208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137583203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f8de19d306926d4cb33393dc1137724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 8300000, guid: b2091562b07cb044b9143c3cb37f38c6, type: 3}
 --- !u!1 &1279879053
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,6 +924,7 @@ GameObject:
   - component: {fileID: 1279879055}
   - component: {fileID: 1279879054}
   - component: {fileID: 1279879058}
+  - component: {fileID: 1279879059}
   m_Layer: 0
   m_Name: 'Kabe '
   m_TagString: Untagged
@@ -989,6 +1018,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fdcc8dea2e78da4e9f98fa64dd20307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1279879059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279879053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f8de19d306926d4cb33393dc1137724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 8300000, guid: b2091562b07cb044b9143c3cb37f38c6, type: 3}
 --- !u!1 &1373494520
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,6 +1043,7 @@ GameObject:
   - component: {fileID: 1373494523}
   - component: {fileID: 1373494522}
   - component: {fileID: 1373494521}
+  - component: {fileID: 1373494525}
   m_Layer: 0
   m_Name: Kabe
   m_TagString: Untagged
@@ -1082,6 +1125,19 @@ Transform:
   m_Father: {fileID: 1652078342}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1373494525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373494520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f8de19d306926d4cb33393dc1137724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 8300000, guid: b2091562b07cb044b9143c3cb37f38c6, type: 3}
 --- !u!1 &1452687872
 GameObject:
   m_ObjectHideFlags: 0
