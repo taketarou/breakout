@@ -11,7 +11,7 @@ public class Destroyer : MonoBehaviour
     private int currentHp; //耐久力の現在値
 
     public AudioClip hitSE; //破壊されない場合のSE
-    public AudioClip DestroySE; //破壊された場合のSE
+    public AudioClip DestroySE; //破壊された場合のSE。button01aというSEのID番号が格納される。
 
     // Start is called before the first frame update
     void Start()
@@ -35,9 +35,9 @@ public class Destroyer : MonoBehaviour
         //  壊れる場合
         if (this.currentHp <= 0)
         {
-            //  破壊されるSEを再生
+            //  破壊されるSEを再生(このスクリプトがアタッチされているブロックゲームオブジェクトのTransformコンポーネントのPositionの位置で、DestroySEに格納されているID番号が指すbutton01Aを鳴らす)
             AudioSource.PlayClipAtPoint(DestroySE, transform.position);
-            // 残りのブロック数を１つ減らす
+            // 残りのブロック数を１つ減らす(GameMasterスクリプトのboxNumを1減らす)
             masterObj.GetComponent<GameMaster>().boxNum--;
             // スコアを加算する
             FindObjectOfType<Score>().AddPoint(point);
