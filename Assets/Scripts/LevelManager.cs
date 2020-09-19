@@ -13,7 +13,8 @@ public class LevelManager : MonoBehaviour
 
     public static int level;                     //  ステージをクリアした回数。シーンをまたいでも引き継ぐようにpublic かつ staticにする。
 
-    public static bool isStart;                  //  ゲーム開始かどうかを判断するフラグ。falseならゲーム開始前。trueならゲーム中と判断する　　
+    public static bool isStart;                  //  ゲーム開始かどうかを判断するフラグ。falseならゲーム開始前。trueならゲーム中と判断する。初期化されていないのでbool型の変数isStartの初期値はfalse
+   
 
     void Start()
     {
