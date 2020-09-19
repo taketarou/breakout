@@ -12,17 +12,21 @@ public class Score : MonoBehaviour //ScoreCanvasオブジェクトにアタッ�
     public Text highScoreText; //HighScoreTextゲームオブジェクトのID番号が代入される
 
     // スコアのカウント用
-    private int score; 
+    public static int score; 
 
     // ハイスコアのカウント用
-    private int highScore; //初期化されていないので、初期値として自動的に0が代入される。
+    public static int highScore; //初期化されていないので、初期値として自動的に0が代入される。
 
     // PlayerPrefsで保存するためのキー(=データの保存、読み込み用のキー)
-    private string highScoreKey = "highScore";
+    private string highScoreKey = "highScore"; 
 
-    void Start()
+    //Start関数(他のスクリプトのStart関数も含む)よりも早く呼ばれる関数
+    void Awake()
     {
-        Initialize();
+        if (!LevelManager.isStart) //LevelManagerのisStart変数を反転したものがtrueなら(=LevelManagerのisStart変数がfalseなら)
+        {
+            Initialize();
+        }
     }
 
     // ゲーム開始前の状態に設定
@@ -65,8 +69,7 @@ public class Score : MonoBehaviour //ScoreCanvasオブジェクトにアタッ�
         PlayerPrefs.SetInt(highScoreKey, highScore);//highScoreKeyというString型の変数に、highScoreに格納されているint型の値を保存する。
         PlayerPrefs.Save(); //保存を確定する(これによって、ゲームが終了しても(＝プログラムが終了しても)、highScoreに格納されたハイスコアをhighScoreKeyという変数を通して参照できるようになる)。
 
-        // ゲーム開始前の状態に戻す
-        Initialize();
+        Debug.Log(highScore);
     }
 }
 
