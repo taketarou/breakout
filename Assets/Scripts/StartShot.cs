@@ -20,4 +20,9 @@ public class StartShot : MonoBehaviour
     {
         
     }
+
+    public void BallDestroy()
+    {
+        this.gameObject.SetActive(false); //このスクリプトが適用されているゲームオブジェクト(=Ballゲームオブジェクト)をゲーム画面から消す。gameObject.SetActive(false);でも同じ意味。　
+    }           
 }
