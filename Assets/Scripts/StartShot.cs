@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class StartShot : MonoBehaviour
 {
+    public float addSpeed; //100が代入される
+
     // Start is called before the first frame update
     void Start()
     {
@@ -11,8 +13,10 @@ public class StartShot : MonoBehaviour
         transform.eulerAngles = new Vector3(0, Random.Range(30, 120), 0);
 
         //z軸という方向(=前方向)に500の力を加えて打ち出す(値によってスピードが変わる)
-        gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * 500);
-  
+        //gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * 500);
+
+        //LevelManager.level=ステージをクリアした回数(値は0から始まる) ステージ1の場合、LevelManager.levelが0なので、transform.forward*500となり、z軸という方向(=前方向)に500の力を加えて打ち出す。ステージ2の場合、LevelManager.levelが1なので、transform.forward*600となり、z軸という方向(=前方向)に600の力を加えて打ち出す。
+        gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * (500 + (LevelManager.level * addSpeed)));
     }
 
     // Update is called once per frame
