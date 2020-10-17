@@ -11,6 +11,7 @@ public class GameMaster : MonoBehaviour
     public float nowTime;//ゲームが開始してからの秒数
     [SerializeField] Text resultMessageText; //ResultMessageTextゲームオブジェクトのTextコンポーネントのID番号が代入される。
     private bool isClear; //isClearがtrueならステージクリア状態、falseなら未ステージクリア状態。
+    [SerializeField] private Score score; //ScoreCanvasゲームオブジェクトのScoreコンポーネント(=Scoreスクリプト)のID番号が代入される。
 
     // Use this for initialization
     void Start()
@@ -44,13 +45,17 @@ public class GameMaster : MonoBehaviour
 
     void StageClear(string resultMessage) //何秒でクリアできたというString型の情報がresultMessageに代入される。
     {
+        score.Save();　//ScoreスクリプトのSaveメソッドを呼び出し、ハイスコアを保存する。
         resultMessageText.text = resultMessage;　　　　　　　　　　　            //  画面にクリア状態を表示する(ResultTextのTextは空白にしておく)　　　　　　　　　　　
         FindObjectOfType<LevelManager>().LevelUp();                              //  LevelManagerのLevelUpメソッドを呼び出す             
     }
 
     public void GameOver(string resultMessage,bool isClear)
     {
-        DataSender.resultMessage = resultMessage;
+        score.Save();//ScoreスクリプトのSaveメソッドを呼び出し、ハイスコアを保存する。
+
+        DataSender.resultMessage = resultMessage; //Resultシーンに遷移すると、public staticがついていないresultMessage変数は消えてしまうので、DataSenderスクリプトのpublic staticがついたresultMessage変数に情報を代入しておく。
+
         DataSender.isClear = isClear;
 
         //Resultという名前の”シーン”に移動しろ．という命令
