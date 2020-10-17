@@ -111,3 +111,4 @@ MonoBehaviour:
   initHp: 2
   hitSE: {fileID: 8300000, guid: bd3e4dcfc41ed9240b53f6dfff87a198, type: 3}
   DestroySE: {fileID: 8300000, guid: b2091562b07cb044b9143c3cb37f38c6, type: 3}
+  rend: {fileID: 3442219898353795124}
