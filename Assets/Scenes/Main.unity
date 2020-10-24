@@ -1150,6 +1150,7 @@ MonoBehaviour:
   boxNum: 2
   nowTime: 0
   resultMessageText: {fileID: 492031953}
+  score: {fileID: 1281237748}
 --- !u!114 &917075412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1969,6 +1970,8 @@ MonoBehaviour:
   - {fileID: 8685439053162038988, guid: 9c4e3e77d92da1c4d948d0fd9aa98633, type: 3}
   - {fileID: 3470392258035698993, guid: 4d4f418da9807e84eb0206b81c87e7f2, type: 3}
   boxesObj: {fileID: 839697767}
+  row: 8
+  column: 6
 --- !u!1 &1748983192
 GameObject:
   m_ObjectHideFlags: 0
