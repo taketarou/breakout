@@ -33,7 +33,7 @@ public class GameMaster : MonoBehaviour
                 isClear = true; //ステージクリアしたことにする
             }
         }
-        
+
         /*
         //もし今のボックス数が0以下ならGameOver関数を呼び出し、Resultシーンに移動する。
         if (boxNum <= 0)
@@ -41,6 +41,15 @@ public class GameMaster : MonoBehaviour
             GameOver(nowTime.ToString("F0")+"秒でクリアできた!",true); //nowTime.ToString("F0")＝nowTimeを小数点第0位まで(＝小数点以下なし)の文字列に変換する
         }
         */
+
+        if (Input.GetKeyDown(KeyCode.Escape)) //PCのESCキーやアンドロイド端末の戻るボタンが押されたら
+        {
+#if UNITY_EDITOR //ゲームを実行している環境がUnityEditorなら
+            UnityEditor.EditorApplication.isPlaying=false; //UnityEditorの実行を停止(このあと実行されるプログラム(他のスクリプトを含む)も実行されなくなる)       
+#else　//ゲームを実行している環境がUnityEditor以外(=WebGL、スマホ端末、PCなど。既にゲームの開発が終了している段階であり、本来の実行環境)なら
+            Application.Quit(); //ゲームを終了する
+#endif //#if文の終了
+        }
     }
 
     void StageClear(string resultMessage) //何秒でクリアできたというString型の情報がresultMessageに代入される。

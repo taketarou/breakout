@@ -57,5 +57,15 @@ public class SceneSelecter : MonoBehaviour
             }
             */
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape)) //PCのESCキーやアンドロイド端末の戻るボタンが押されたら
+        {
+#if UNITY_EDITOR //ゲームを実行している環境がUnityEditorなら
+            UnityEditor.EditorApplication.isPlaying=false; //UnityEditorの実行を停止(このあと実行されるプログラム(他のスクリプトを含む)も実行されなくなる)       
+#else　//ゲームを実行している環境がUnityEditor以外(=WebGL、スマホ端末、PCなど。既にゲームの開発が終了している段階であり、本来の実行環境)なら
+            Application.Quit(); //ゲームを終了する
+#endif //#if文の終了
+        }
+
     }
 }
