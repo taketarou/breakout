@@ -7,9 +7,9 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
 
-    [SerializeField] Text levelText;             //  レベルの表示用。インスペクタで指定可能。LevelTextゲームオブジェクトのTextコンポーネントのID番号が代入される。
+    [SerializeField] Text levelText=null;             //  レベルの表示用。インスペクタで指定可能。LevelTextゲームオブジェクトのTextコンポーネントのID番号が代入される。
 
-    [SerializeField] StartShot startShot;        //  ボールの制御用。BallゲームオブジェクトのStartShotコンポーネント(=StartShotスクリプト)のID番号が代入される。
+    [SerializeField] StartShot startShot=null;        //  ボールの制御用。BallゲームオブジェクトのStartShotコンポーネント(=StartShotスクリプト)のID番号が代入される。
 
     public static int level;                     //  ステージをクリアした回数。シーンをまたいでも引き継ぐようにpublic かつ staticにする。
 

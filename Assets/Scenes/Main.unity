@@ -1152,6 +1152,9 @@ MonoBehaviour:
   nowTime: 0
   resultMessageText: {fileID: 492031953}
   score: {fileID: 1281237748}
+  quitCheckPopUpPrefab: {fileID: 3034208136956545153, guid: b53a7e431f6f38148a1cec3ea14122f3,
+    type: 3}
+  canvasTran: {fileID: 1281237747}
 --- !u!114 &917075412
 MonoBehaviour:
   m_ObjectHideFlags: 0

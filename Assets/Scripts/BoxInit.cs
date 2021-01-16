@@ -27,10 +27,10 @@ public class BoxInit : MonoBehaviour
                 //0から配列boxObjPrefabsの要素数-1までの範囲で乱数を作って、それをrandomValueに格納する。0か1が格納される。
                 int randomValue = Random.Range(0, boxObjPrefabs.Length);
 
-                //Box、またはHardBoxを複製し、gに格納する(複製してできたオブジェクトは、boxesObjに格納されているBoxesゲームオブジェクトの子オブジェクトとなる)。
+                //Box、またはHardBoxを親オブジェクトのBoxesオブジェクトと同じ位置に複製し、gに格納する(複製してできたオブジェクトは、boxesObjに格納されているBoxesゲームオブジェクトの子オブジェクトとなる)。
                 GameObject g = Instantiate(boxObjPrefabs[randomValue], boxesObj.transform);
 
-                //複製してできたオブジェクトの位置(親オブジェクトから見た位置)の変更
+                //複製してできたオブジェクトの位置(親オブジェクトであるBoxesオブジェクトから見た位置)の変更
                 g.transform.localPosition = new Vector3((2f + (1f * y)), 0.4f, (-4.2f + (1.2f * x)));
                 
 
