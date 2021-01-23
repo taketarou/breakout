@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class GameMaster : MonoBehaviour
 {
-
     public int boxNum;//現在存在するボックスの数　今回の場合、40が代入される
     public float nowTime;//ゲームが開始してからの秒数
     [SerializeField] Text resultMessageText=null; //ResultMessageTextゲームオブジェクトのTextコンポーネントのID番号が代入される。
@@ -14,8 +13,9 @@ public class GameMaster : MonoBehaviour
     [SerializeField] Score score=null; //ScoreCanvasゲームオブジェクトのScoreコンポーネント(=Scoreスクリプト)のID番号が代入される。
     public QuitCheckPopUp quitCheckPopUpPrefab; //QuitCheckPopUpプレファブのID番号が代入される。
     public Transform canvasTran; //ScoreCanvasのRect Transform（位置）のID番号が代入される。
-    
 
+    [SerializeField] QuitCheckPopUp quitCheckPopUp = null; //プレハブから生成したポップアップのID番号を代入する変数
+   
     // Use this for initialization
     void Start()
     {
@@ -45,9 +45,9 @@ public class GameMaster : MonoBehaviour
         }
         */
 
-        if (Input.GetKeyDown(KeyCode.Escape)) //PCのESCキーやアンドロイド端末の戻るボタンが押されたら
+        if (quitCheckPopUp==null && Input.GetKeyDown(KeyCode.Escape)) //PCのESCキーやアンドロイド端末の戻るボタンが押されたら
         {
-            Instantiate(quitCheckPopUpPrefab, canvasTran, false);
+            quitCheckPopUp=Instantiate(quitCheckPopUpPrefab, canvasTran, false);
         }
     }
 

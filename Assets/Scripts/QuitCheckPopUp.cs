@@ -25,6 +25,6 @@ public class QuitCheckPopUp : MonoBehaviour //QuitCheckPopUpプレハブにア�
     {
         // ゲーム内時間の流れを再開する
         Time.timeScale = 1.0f;
-        Destroy(gameObject);
+        Destroy(gameObject); //この処理により、ポップアップが消え、ポップアップのID番号が代入されているGameMasterスクリプトのquitCheckPopUp変数の中身もnullとなる。
     }
 }
