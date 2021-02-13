@@ -40,24 +40,9 @@ public class SceneSelecter : MonoBehaviour
                     SceneManager.LoadScene(SceneType.Title.ToString());
                     break;
             }
-
-
-            /*
-            //遷移させるゲームシーンをsceneName(=現在のゲームシーン)より決定する
-            switch (sceneName)
-            {                                
-                case "Title":                                //  sceneNameがTitleなら
-                    SceneManager.LoadScene("Main");          //  Mainシーンへ遷移する
-                    break;
-                case "Result":                               //  sceneNameがResultなら
-                    SceneManager.LoadScene("Title");         //  Titleシーンへ遷移する
-                    break;
-                default:
-                    break;
-            }
-            */
         }
 
+        /*
         if (Input.GetKeyDown(KeyCode.Escape)) //PCのESCキーやアンドロイド端末の戻るボタンが押されたら
         {
 #if UNITY_EDITOR //ゲームを実行している環境がUnityEditorなら
@@ -66,6 +51,7 @@ public class SceneSelecter : MonoBehaviour
             Application.Quit(); //ゲームを終了する
 #endif //#if文の終了
         }
+        */
 
     }
 }

@@ -11,11 +11,14 @@ public class GameMaster : MonoBehaviour
     [SerializeField] Text resultMessageText=null; //ResultMessageTextゲームオブジェクトのTextコンポーネントのID番号が代入される。
     private bool isClear; //isClearがtrueならステージクリア状態、falseなら未ステージクリア状態。
     [SerializeField] Score score=null; //ScoreCanvasゲームオブジェクトのScoreコンポーネント(=Scoreスクリプト)のID番号が代入される。
+
+    /*
     public QuitCheckPopUp quitCheckPopUpPrefab; //QuitCheckPopUpプレファブのID番号が代入される。
     public Transform canvasTran; //ScoreCanvasのRect Transform（位置）のID番号が代入される。
 
     [SerializeField] QuitCheckPopUp quitCheckPopUp = null; //プレハブから生成したポップアップのID番号を代入する変数
-   
+    */
+
     // Use this for initialization
     void Start()
     {
@@ -45,10 +48,12 @@ public class GameMaster : MonoBehaviour
         }
         */
 
+        /*
         if (quitCheckPopUp==null && Input.GetKeyDown(KeyCode.Escape)) //PCのESCキーやアンドロイド端末の戻るボタンが押されたら
         {
             quitCheckPopUp=Instantiate(quitCheckPopUpPrefab, canvasTran, false);
         }
+        */
     }
 
     void StageClear(string resultMessage) //何秒でクリアできたというString型の情報がresultMessageに代入される。
@@ -70,6 +75,8 @@ public class GameMaster : MonoBehaviour
         SceneManager.LoadScene("Result");
     }
 
+    
+    /*
     /// <summary>
     /// ゲームの終了処理(staticメソッドにしておくことで、終了確認用ポップアップからも呼び出せる)
     /// </summary>
@@ -81,4 +88,6 @@ public class GameMaster : MonoBehaviour
         Application.Quit(); //ゲームを終了する
 #endif //#if文の終了
     }
+    */
+    
 }
