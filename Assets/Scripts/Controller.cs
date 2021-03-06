@@ -6,8 +6,12 @@ using UnityEngine; //デバッグログやUnity専用の機能を使えるよう
 //public class クラス名:継承しているクラス名       UnityのスクリプトではMonoBehaviourを基本的に継承  MonoBehaviouを継承することで(MonoBehaviourクラスで定義されている変数、関数である)Start関数やUpdate関数、transform変数、gameObject変数などが使えるようになる。
 public class Controller : MonoBehaviour　
 {
+    
     [Header("バーの移動速度"),Range(0.1f,1.0f)]
     public float playerSpeed; //Player(バー)の移動速度
+
+    [Header("バーの移動範囲の制限値")]
+    public float limitPos = 4.25f;
 
     // 実行時に初めに1回呼ばれる関数
     void Start() 
@@ -37,5 +41,12 @@ public class Controller : MonoBehaviour　
             //このコンポーネント(=スクリプト)を持っているオブジェクトのtransformコンポーネントのpositionのz座標からplayerSpeedを引きなさい．
             transform.position -= transform.forward * playerSpeed;
         }
+
+        //バーの移動範囲を制限(transformコンポーネントのpositionのz座標を－4.25から4.25の範囲に制限する)
+        float z = Mathf.Clamp(transform.position.z, -limitPos, limitPos);
+
+        //位置情報の更新
+        transform.position = new Vector3(transform.position.x, transform.position.y, z);
+
     }
 }
