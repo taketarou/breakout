@@ -13,6 +13,9 @@ public class StartShot : MonoBehaviour
         //このスクリプトが適用されているゲームオブジェクト(=Ball)が持っているRigidbodyコンポーネントのID番号を返し、参照型変数rbに代入する。もし、Rigidbodyコンポーネントが存在しなかった場合、戻り値としてnullを返し、rbに代入する。
         rb = GetComponent<Rigidbody>();
 
+        //このスクリプトが適用されているゲームオブジェクト(=Ball)の親オブジェクトをPlayerというタグがついたゲームオブジェクト(=Playerゲームオブジェクト)とする（これによりPlayerが動くとBallも一緒に動くようになる)。
+        transform.SetParent(GameObject.FindGameObjectWithTag("Player").transform);
+
         /*
         //このスクリプトが適用されているゲームオブジェクトのTransformコンポーネントの回転角情報(=Rotationの値)をx=0, y=30～120の中からランダムで取り出した値, z=0にする． 文法の詳細としては、Vector3オブジェクト(=Vector3クラスにアクセスするためのオブジェクト)を生成した後、引数を=0, 30～120の中からランダムで取り出した値, 0とし(Vector3クラスにある)Vector3コンストラクタを呼びだす(=Vector3クラスに定義されている変数x,y,zに0, 30～120の中からランダムで取り出した値,0がそれぞれ格納される？)。そして、Vector3オブジェクトのID番号を、(Monobehaviourクラスに定義されている)参照型変数transformに格納されているID番号が指すオブジェクト(=Vector3オブジェクト)に定義されている参照型変数eulerAnglesに格納する(eulerAngles.～とすることでVector3オブジェクトのID番号が指すオブジェクトであるVector3オブジェクト(=Vector3クラス)の変数～にアクセスできる)。    ベクトル2,ベクトル3,ベクトル4(引数の数によってどれを使うかが変わる)。オイラーアングルズ=InspectorタブのRotationの情報
         transform.eulerAngles = new Vector3(0, Random.Range(30, 120), 0);
@@ -30,6 +33,9 @@ public class StartShot : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && rb.velocity.z == 0) //もしマウスの左ボタンが(押されていない状態から)押されて、かつ、BallのRigidbodyコンポーネントのinfoのVelocity(=速度ベクトル)のz軸の値が0(=ボールが動いていない)なら      rb.velocity.x== 0でも良い
         {
+            //このスクリプトが適用されているゲームオブジェクト(=Ball)とその親オブジェクト(=Player)の親子関係を解消する
+            transform.parent = null;
+
             //このスクリプトが適用されているゲームオブジェクト(=Ball)のTransformコンポーネントの回転角情報(=Rotationの値)をx=0, y=30～120の中からランダムで取り出した値, z=0にする． 文法の詳細としては、Vector3オブジェクト(=Vector3クラスにアクセスするためのオブジェクト)を生成した後、引数を=0, 30～120の中からランダムで取り出した値, 0とし(Vector3クラスにある)Vector3コンストラクタを呼びだす(=Vector3クラスに定義されている変数x,y,zに0, 30～120の中からランダムで取り出した値,0がそれぞれ格納される？)。そして、Vector3オブジェクトのID番号を、(Monobehaviourクラスに定義されている)参照型変数transformに格納されているID番号が指すオブジェクト(=Vector3オブジェクト)に定義されている参照型変数eulerAnglesに格納する(eulerAngles.～とすることでVector3オブジェクトのID番号が指すオブジェクトであるVector3オブジェクト(=Vector3クラス)の変数～にアクセスできる)。    ベクトル2,ベクトル3,ベクトル4(引数の数によってどれを使うかが変わる)。オイラーアングルズ=InspectorタブのRotationの情報
             transform.eulerAngles = new Vector3(0, Random.Range(30, 120), 0);
 
