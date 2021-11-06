@@ -7,7 +7,7 @@ using UnityEngine; //デバッグログやUnity専用の機能を使えるよう
 public class Controller : MonoBehaviour　
 {
     
-    [Header("バーの移動速度"),Range(0.1f,1.0f)]
+    [UnityEngine.Header("バーの移動速度"),Range(0.1f,1.0f)]
     public float playerSpeed; //Player(バー)の移動速度
 
     [Header("バーの移動範囲の制限値")]
@@ -16,7 +16,7 @@ public class Controller : MonoBehaviour　
     // 実行時に初めに1回呼ばれる関数
     void Start() 
     {
-
+        Vector3 pos = Vector3.right;
 
     }
 
